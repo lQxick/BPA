@@ -1,6 +1,6 @@
-# Ecom Website
+# BPA Project Website
 
-Ecom website for client.
+Website for BPA Project Due December 9
 
 ## Using The Repo
 
