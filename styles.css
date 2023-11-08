@@ -1,0 +1,124 @@
+/* Reset some default styles and set a base font size */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Style the header and navigation */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu li {
+    margin-right: 20px;
+    position: relative;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style the dropdown menu in the header */
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.submenu a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Style the menu section */
+#menu {
+    padding: 20px;
+}
+
+.menu-category {
+    margin-bottom: 20px;
+}
+
+.menu-category h3 {
+    font-size: 24px;
+}
+
+.menu-category ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.menu-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: calc(25% - 20px); /* Distribute menu items evenly */
+    text-align: center;
+}
+
+.menu-item h4 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.menu-item p {
+    margin: 5px 0;
+}
+
+.menu-item p:last-child {
+    font-weight: bold;
+}
+
+/* Style the footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.address, .contact, .social-media {
+    margin-bottom: 20px;
+}
+
+.social-media {
+    /* Style your social media icons and links here */
+}
