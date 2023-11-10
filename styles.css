@@ -92,6 +92,7 @@ header {
     border-radius: 5px;
     width: calc(80% - 20px); /* Distribute menu items evenly */
     text-align: center;
+    box-shadow: 3px 3px 3px lightgray;
 }
 
 .menu-item h4 {
