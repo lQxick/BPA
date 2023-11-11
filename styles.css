@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lora', serif;
+    /* Additional styling for the body goes here */
     font-size: 16px;
 }
 
@@ -31,6 +32,7 @@ header {
     display: flex;
     margin-right: 20px;
     position: relative;
+    font-size: x-large;
 }
 
 .menu li {
@@ -51,6 +53,7 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
+    z-index: 1; /* Set a positive z-index to ensure it's positioned in front of the parallax image */
 }
 
 .menu li:hover .submenu {
@@ -94,6 +97,11 @@ header {
     width: calc(80% - 20px); /* Distribute menu items evenly */
     text-align: center;
     box-shadow: 3px 3px 3px 3px lightgray;
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
 }
 
 .menu-item h4 {
@@ -133,3 +141,41 @@ h2 {
 hr {
     border: 3px solid #ffffff;
 }
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #000000;
+    background-color: white;
+    padding: 50px;
+    border-radius: 5px;
+}
+
+/* Styles for the overlay content */
+.overlay h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1.2em;
+}
+
+.parallax {
+    position: relative;
+    height: 400px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.parallax-image {
+    /* Background image for parallax effect */
+    background-image: url('templateImage.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    z-index: -1; /* Set a negative z-index to position it behind other elements */
+}
+
