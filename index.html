@@ -33,12 +33,20 @@
     <section class="parallax">
         <!-- Parallax background image -->
         <div class="parallax-image"></div>
-
+        <!-- Spacer for the parallax effect -->
+        <div class="spacer"></div>
         <!-- Content overlay on top of the image -->
         <div class="overlay">
             <h2>Sizzling Delights, Unforgettable Nights.</h2>
             <p>Join us for an unforgettable dining experience!</p>
         </div>
+        <script>
+            document.addEventListener('scroll', function () {
+                var scrollPosition = window.scrollY;
+                var parallax = document.querySelector('.parallax-image');
+                parallax.style.transform = 'translateY(' + (scrollPosition * 0.4) + 'px)';
+            });
+        </script>
     </section>
     <section id="menu">
         <h2>Menus</h2>
