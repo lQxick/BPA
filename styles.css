@@ -250,4 +250,45 @@ hr {
     transform: translate3d(0, 0, 0); /* Set initial transform to avoid jump */
 }
 
+.cart {
+    display: flex;
+    padding: 5px;
+}
 
+.food-item {
+    padding: 40px;
+    width: 1000%;
+}
+
+.food-img {
+    background-image: url('omelette.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+}
+
+.food-desc {
+    padding-top: 10%;
+    padding-bottom: 30%;
+}
+
+.food-price {
+    padding-bottom: 5%;
+}
+
+.food-add {
+    padding: 2%;
+    background-color: #333333;
+    color: white;
+    width: 30%;
+    text-align: center;
+}
+
+.food-select {
+    padding: 2%;
+    background-color: #333333;
+    color: white;
+    width: 30%;
+    text-align: center;
+}
