@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/Styles/styles.css">
     <title>Game Day Grill | Sizzling Delights</title>
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <script src="script.js"></script>
+    <link rel="icon" type="/image/png" sizes="96x96" href="/favicon-96x96.png">
+    <script src="/script.js"></script>
 </head>
 <body style="background-color: #ffffff;">
     <header>
         <div class="logo">
-            <img src="gameDayGrillLogo.PNG" alt="gameDayGrillLogo" width="400">
+            <img src="/gameDayGrillLogo.PNG" alt="gameDayGrillLogo" width="400">
         </div>
         <!-- navigation bar -->
         <nav>
             <ul class="menu">
-                <li><a href="#">Menu</a>
-                    <ul class="submenu">
-                        <li><a href="#breakfast">Breakfast</a></li>
-                        <li><a href="#lunch">Lunch</a></li>
-                        <li><a href="#dinner">Dinner</a></li>
-                        <li><a href="#dessert">Dessert</a></li>
-                    </ul>
-                </li>
+                <li><a href="/Pages/index.html">Menu</a></li>
                 <li><a href="#events">Events</a></li>
-                <li><a href="#reservations">Reservation</a></li>
-                <li><a href="#cart">Cart</a></li>
+                <li><a href="/Pages/Res.html">Reservation</a></li>
+                <li><a href="/Pages/cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
@@ -43,8 +36,8 @@
         </div>
     </section>
     <section id="menu">
-        <h2 id="menu-heading">Menus</h2>
         <div class="menu-category" id="breakfast">
+            <h2>Breakfast Menu</h2>
             <ul>
                 <li>
                     <div class="menu-item" data-name="Eggs Benedict" data-description="Poached eggs on an English muffin with hollandaise sauce." data-price="$10.99" data-img="/imgMenu/eggsBenedict.jpg">
@@ -72,6 +65,7 @@
         </div>
 
         <div class="menu-category" id="lunch">
+            <h2>Lunch Menu</h2>
             <ul>
                 <li>
                     <div class="menu-item" data-name="Grilled Chicken Salad" data-description="Fresh greens with grilled chicken and balsamic vinaigrette." data-price="$12.99" data-img="/imgMenu/salad.jpg">
@@ -99,6 +93,7 @@
         </div>
 
         <div class="menu-category" id="dinner">
+            <h2>Dinner Menu</h2>
             <ul>
                 <li>
                     <div class="menu-item" data-name="Filet Mignon" data-description="Tender filet mignon with garlic mashed potatoes." data-price="$24.99" data-img="/imgMenu/mignon.jpg">
@@ -126,6 +121,7 @@
         </div>
 
         <div class="menu-category" id="dessert">
+            <h2>Dessert Menu</h2>
             <ul>
                 <li>
                     <div class="menu-item" data-name="Chocolate Lava Cake" data-description="Warm chocolate cake with a molten center." data-price="$7.99" data-img="/imgMenu/cake.jpg">
@@ -174,16 +170,10 @@
         </div>
     </section>
     </div>
-
-    <!-- Add a new section for the cart -->
-<section id="cart">
-    <h2>Shopping Cart</h2>
-    <ul id="cart-items"></ul>
-</section>
      
     <footer>
         <div class="address">
-            <p>123 Main Street, City, State ZIP</p>
+            <p>123 Main Street, Warsaw, 46580</p>
         </div>
         <div class="contact">
             <p>Contact Us: info@gamedaygrill.com</p>
