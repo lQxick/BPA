@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Styles/styles.css">
+    <link rel="stylesheet" href="/src/styles.css">
     <title>Game Day Grill | Sizzling Delights</title>
     <link rel="icon" type="/image/png" sizes="96x96" href="/favicon-96x96.png">
-    <script src="/script.js"></script>
+    
 </head>
 <body style="background-color: #ffffff;">
     <header>
@@ -36,116 +36,8 @@
         </div>
     </section>
     <section id="menu">
-        <div class="menu-category" id="breakfast">
-            <h2>Breakfast Menu</h2>
-            <ul>
-                <li>
-                    <div class="menu-item" data-name="Eggs Benedict" data-description="Poached eggs on an English muffin with hollandaise sauce." data-price="$10.99" data-img="/imgMenu/eggsBenedict.jpg">
-                        <h4>Eggs Benedict</h4>
-                        <p>Poached eggs on an English muffin with hollandaise sauce.</p>
-                        <p>$10.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Pancakes" data-description="Fluffy pancakes with maple syrup and butter." data-price="$8.99" data-img="/imgMenu/pancakes.jpg">
-                        <h4>Pancakes</h4>
-                        <p>Fluffy pancakes with maple syrup and butter.</p>
-                        <p>$8.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Omelette" data-description="Customizable omelette with your choice of ingredients." data-price="$9.99" data-img="/imgMenu/omelette.jpg">
-                        <h4>Omelette</h4>
-                        <p>Customizable omelette with your choice of ingredients.</p>
-                        <p>$9.99</p>
-                    </div>
-                </li>
-                <!-- Add more breakfast items as needed -->
-            </ul>
-        </div>
-
-        <div class="menu-category" id="lunch">
-            <h2>Lunch Menu</h2>
-            <ul>
-                <li>
-                    <div class="menu-item" data-name="Grilled Chicken Salad" data-description="Fresh greens with grilled chicken and balsamic vinaigrette." data-price="$12.99" data-img="/imgMenu/salad.jpg">
-                        <h4>Grilled Chicken Salad</h4>
-                        <p>Fresh greens with grilled chicken and balsamic vinaigrette.</p>
-                        <p>$12.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Classic Burger" data-description="Beef patty with lettuce, tomato, and your choice of toppings." data-price="$11.99" data-img="/imgMenu/burger.jpg">
-                        <h4>Classic Burger</h4>
-                        <p>Beef patty with lettuce, tomato, and your choice of toppings.</p>
-                        <p>$11.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Vegetarian Wrap" data-description="Roasted veggies, hummus, and feta in a spinach wrap." data-price="$10.99" data-img="/imgMenu/veggie.jpg">
-                        <h4>Vegetarian Wrap</h4>
-                        <p>Roasted veggies, hummus, and feta in a spinach wrap.</p>
-                        <p>$10.99</p>
-                    </div>
-                </li>
-                <!-- Add more lunch items as needed -->
-            </ul>
-        </div>
-
-        <div class="menu-category" id="dinner">
-            <h2>Dinner Menu</h2>
-            <ul>
-                <li>
-                    <div class="menu-item" data-name="Filet Mignon" data-description="Tender filet mignon with garlic mashed potatoes." data-price="$24.99" data-img="/imgMenu/mignon.jpg">
-                        <h4>Filet Mignon</h4>
-                        <p>Tender filet mignon with garlic mashed potatoes.</p>
-                        <p>$24.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Salmon with Lemon Butter" data-description="Grilled salmon with a tangy lemon butter sauce." data-price="$20.99" data-img="/imgMenu/salmon.jpg">
-                        <h4>Salmon with Lemon Butter</h4>
-                        <p>Grilled salmon with a tangy lemon butter sauce.</p>
-                        <p>$20.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Vegetable Risotto" data-description="Creamy risotto with a medley of seasonal vegetables." data-price="$16.99" data-img="/imgMenu/risotto.jpg">
-                        <h4>Vegetable Risotto</h4>
-                        <p>Creamy risotto with a medley of seasonal vegetables.</p>
-                        <p>$16.99</p>
-                    </div>
-                </li>
-                <!-- Add more dinner items as needed -->
-            </ul>
-        </div>
-
-        <div class="menu-category" id="dessert">
-            <h2>Dessert Menu</h2>
-            <ul>
-                <li>
-                    <div class="menu-item" data-name="Chocolate Lava Cake" data-description="Warm chocolate cake with a molten center." data-price="$7.99" data-img="/imgMenu/cake.jpg">
-                        <h4>Chocolate Lava Cake</h4>
-                        <p>Warm chocolate cake with a molten center.</p>
-                        <p>$7.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="New York Cheesecake" data-description="Creamy cheesecake with a graham cracker crust." data-price="$6.99" data-img="/imgMenu/cheesecake.jpg">
-                        <h4>New York Cheesecake</h4>
-                        <p>Creamy cheesecake with a graham cracker crust.</p>
-                        <p>$6.99</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="menu-item" data-name="Apple Pie" data-description="Homemade apple pie with a flaky crust." data-price="$5.99" data-img="/imgMenu/pie.jpg">
-                        <h4>Apple Pie</h4>
-                        <p>Homemade apple pie with a flaky crust.</p>
-                        <p>$5.99</p>
-                    </div>
-                </li>
-                <!-- Add more dessert items as needed -->
-            </ul>
+        <div class="menu-category" id="shop">
+            <h2>Menu</h2>
         </div>
     </section>
     <div id="popup-container">
@@ -183,4 +75,5 @@
         </div>
     </footer>
 </body>
+<script src="/src/script.js"></script>
 </html>
