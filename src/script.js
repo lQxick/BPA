@@ -84,7 +84,11 @@ let shopItemsData = [{
     desc: "Homemade apple pie with a flaky crust.",
     img: "/imgMenu/pie.jpg"
 }]
-
+document.addEventListener('scroll', function () {
+    var scrollPosition = window.scrollY;
+    var parallax = document.querySelector('.parallax-image');
+    parallax.style.transform = 'translateY(' + (scrollPosition * 0.4) + 'px)';
+});
 let generateShop =()=>{
     return (shop.innerHTML = shopItemsData
         .map((x)=>{
