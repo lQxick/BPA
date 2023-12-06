@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles.css">
+    <title>Game Day Grill | Reservation</title>
+    <link rel="icon" type="/image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/gameDayGrillLogo.PNG" alt="gameDayGrillLogo" width="400">
+        </div>
+        <!-- navigation bar -->
+        <nav>
+            <ul class="menu">
+                <li><a href="/Pages/index.html">Menu</a></li>
+                <li><a href="#" id="events-btn">Events</a></li>
+                <li><a href="/Pages/reservation.html">Reservation</a></li>
+                <li><a href="/Pages/cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+    <hr>
+    <div id="events-popup" class="popup">
+        <section id="events-content">
+            <h2>Current Events</h2>
+            <p>Join us for exciting events happening now!</p>
+            <ul>
+                <li>Live Music Night - Every Friday</li>
+                <li>Game Day Specials - All Week</li>
+                <li>Happy Hour - Monday to Thursday, 5-7 PM</li>
+            </ul>>
+        </section>
+        <button id="close-popup-btn"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <!-- Your page content goes here -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the events button, events popup, and close button
+            var eventsBtn = document.getElementById("events-btn");
+            var eventsPopup = document.getElementById("events-popup");
+            var closeEventsBtn = document.getElementById("close-popup-btn");
+
+            // Display the events popup immediately upon loading
+            eventsPopup.style.display = "block";
+
+            // Add click event listener to the Events button
+            eventsBtn.addEventListener("click", function (event) {
+                // Prevent the default link behavior
+                event.preventDefault();
+
+                // Display the events popup
+                eventsPopup.style.display = "block";
+            });
+
+            // Add click event listener to the close button
+            closeEventsBtn.addEventListener("click", function () {
+                // Hide the events popup
+                eventsPopup.style.display = "none";
+            });
+        });
+    </script>
+</body>
