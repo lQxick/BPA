@@ -326,6 +326,29 @@ hr {
     display: none;
 }
 
+/* Item Styles */
+
+
+.shop {
+    display: grid;
+    grid-template-columns: repeat(4, 223px);
+    gap: 180px;
+    justify-content: center;
+}
+
+.item {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    width: 300px; /* Distribute menu items evenly */
+    text-align: center;
+    box-shadow: 3px 3px 3px 3px lightgray;
+    transition: transform 0.5s ease;
+}
+
+/* Res CSS */
+
 #reservation-form {
     max-width: 600px;
     margin: 50px auto;

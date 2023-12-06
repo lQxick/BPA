@@ -84,23 +84,67 @@ let shopItemsData = [{
     desc: "Homemade apple pie with a flaky crust.",
     img: "/imgMenu/pie.jpg"
 }]
-document.addEventListener('scroll', function () {
-    var scrollPosition = window.scrollY;
-    var parallax = document.querySelector('.parallax-image');
-    parallax.style.transform = 'translateY(' + (scrollPosition * 0.4) + 'px)';
-});
+
+let basket = [];
+
 let generateShop =()=>{
     return (shop.innerHTML = shopItemsData
         .map((x)=>{
             let {id, name, price, desc, img} =x
         return `
-        <div id=product-id-${id} class="menu-item">
-        <h4>${name}</h4>
-        <p>${desc}</p>
-        <p>$${price}</p>
+        <div class="item">
+        <img width="200" src="${img}" alt="">
+        <div class="details">
+            <h3>${name}</h3>
+            <p>${desc}</p>
+            <div class="price-quantity">
+                <h2>$${price}</h2>
+                <div class="buttons">
+                    <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+                    <div id=${id} class="quantity">0</div>
+                    <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+                </div>
+            </div>
         </div>
+    </div>
         `
-    }),join(""));
+    }).join(""));
 }
 
 generateShop()
+
+let increment = (id) => {
+    let selectedItem = id
+    let search = basket.find((x) => x.id === selectedItem.id)
+
+    if(search === undefined){
+        basket.push({
+            id: selectedItem.id,
+            item: 1,
+        })
+    }
+    else{
+        search.item += 1;
+    }
+
+    localStorage.setItem("data", basket);
+    
+    update(selectedItem.id);
+};
+let decrement = (id) => {
+    let selectedItem = id
+    let search = basket.find((x) => x.id === selectedItem.id)
+
+    if(search.item === 0) return;
+    else{
+        search.item -= 1;
+    }
+
+    
+    update(selectedItem.id);
+};
+let update = (id) => {
+    let search = basket.find((x) => x.id === id);
+    console.log(search.item);
+    document.getElementById(id).innerHTML = search.item;
+};
