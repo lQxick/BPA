@@ -389,3 +389,20 @@ input[type="submit"]:hover {
 #close-popup-btn:hover {
     background-color: #555;
 }
+
+.music-night {
+    position: relative;
+    height: 600px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.music-night-image {
+    /* Background image for parallax effect */
+    background-image: url('/boombox.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100%;
+    z-index: -1; /* Set a negative z-index to position it behind other elements */
+    transform: translate3d(0, 0, 0); /* Set initial transform to avoid jump */
+}
