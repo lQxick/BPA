@@ -142,18 +142,7 @@ header {
     list-style: none;
 }
 
-.menu-item {
-    background-color: #ffffff;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    width: 300px; /* Distribute menu items evenly */
-    text-align: center;
-    box-shadow: 3px 3px 3px 3px lightgray;
-    transition: transform 0.5s ease;
-}
-
-.menu-item:hover {
+.item:hover {
     transform: scale(1.05);
 }
 
