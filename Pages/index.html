@@ -16,8 +16,8 @@
         <nav>
             <ul class="menu">
                 <li><a href="#menu">Menu</a></li>
-                <li><a href="/Pages/events.html">Events</a></li>
-                <li><a href="/Pages/reservation.html">Reservation</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#resercation">Reservation</a></li>
                 <li><a href="javascript:void(0);" onclick="openCart()" id="cart">Cart</span></a></li>
             </ul>
         </nav>
@@ -33,7 +33,7 @@
     
         <!-- Menu Section -->
     <h1 style="text-align: center;">Menu</h1>
-    <section class="menu">
+    <section class="menu" id="menu">
         <!-- Left Panel - Categories -->
         <div class="category-panel">
             <ul>
@@ -285,7 +285,7 @@
     </div>
     <!-- Events Section -->
     <h1 style="text-align: center;">Events</h1>
-    <section class="events">
+    <section class="events" id="events">
         <h1 style="text-align: center;">Upcoming Events</h1>
 
         <!-- Slideshow Container -->
@@ -319,7 +319,7 @@
     </section>
     <h1 style="text-align: center;">Reservation</h1>
         <!-- Find a Reservation Form -->
-        <div class="reservation-form">
+        <div class="reservation-form" id="reservation">
             <h1 style="text-align: center;">Find a Reservation</h1>
             <form id="reservationForm" onsubmit="findTable(); return false;">
                 <!-- Date Input -->
