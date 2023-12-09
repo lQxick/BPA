@@ -6,17 +6,16 @@
     <link rel="stylesheet" href="/src/styles.css">
     <title>Game Day Grill | Sizzling Delights</title>
     <link rel="icon" type="/image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
-<body style="background-color: #ffffff;">
+<body>
     <header>
         <div class="logo">
-            <img src="/gameDayGrillLogo.PNG" alt="gameDayGrillLogo" width="400">
+            <a href="#parallax"><img src="/gameDayGrillLogo.PNG" alt="Game Day Grill Logo" width="400"></a>
         </div>
         <!-- navigation bar -->
         <nav>
             <ul class="menu">
-                <li><a href="/Pages/index.html">Menu</a></li>
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="/Pages/events.html">Events</a></li>
                 <li><a href="/Pages/reservation.html">Reservation</a></li>
                 <li><a href="/Pages/cart.html">Cart</a></li>
@@ -24,33 +23,327 @@
         </nav>
     </header>
     <hr>
+    <!--Parallax Image-->
     <section class="parallax">
-        <!-- Parallax background image -->
-        <div class="parallax-image"></div>
-        <!-- Spacer for the parallax effect -->
-        <div class="spacer"></div>
-        <!-- Content overlay on top of the image -->
         <div class="overlay">
-            <h2>Sizzling Delights, Unforgettable Nights.</h2>
-            <p>Join us for an unforgettable dining experience!</p>
+            <h1>Welcome to Game Day Grill!</h1>
+            <p>Your Sub-Header Goes Here</p>
         </div>
     </section>
-        <h2>Menu</h2>
-        <div class="shop" id="shop">
-
-        </div>
     
-    <footer>
-        <div class="address">
-            <p>123 Main Street, Warsaw, 46580</p>
+        <!-- Menu Section -->
+    <h1 style="text-align: center;">Menu</h1>
+    <section class="menu">
+        <!-- Left Panel - Categories -->
+        <div class="category-panel">
+            <ul>
+                <li><a href="javascript:void(0);" onclick="showCategory('appetizers')">Appetizers</a></li>
+                <li><a href="javascript:void(0);" onclick="showCategory('breakfast')">Breakfast</a></li>
+                <li><a href="javascript:void(0);" onclick="showCategory('lunch')">Lunch</a></li>
+                <li><a href="javascript:void(0);" onclick="showCategory('dinner')">Dinner</a></li>
+                <li><a href="javascript:void(0);" onclick="showCategory('dessert')">Dessert</a></li>
+                <li><a href="javascript:void(0);" onclick="showCategory('sides')">Sides</a></li>
+            </ul>
         </div>
-        <div class="contact">
-            <p>Contact Us: info@gamedaygrill.com</p>
+
+        <!-- Right Panel - Food Items -->
+
+        <div class="food-panel" id="appetizers">
+            <!-- Appetizers -->
+            <div class="food-item" data-name="Loaded Nachos" data-description="Crispy tortilla chips topped with melted cheese, guacamole, and salsa." data-price="$9.99">
+                <img src="/images/appetizer1.jpg" alt="Appetizer 1">
+                <h2>Loaded Nachos</h2>
+                <p>Crispy tortilla chips topped with melted cheese, guacamole, and salsa.</p>
+                <button onclick="openCustomizeMenu('Loaded Nachos')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Buffalo Chicken Wings" data-description="Spicy and tangy chicken wings served with celery sticks and blue cheese dressing." data-price="$11.99">
+                <img src="/images/appetizer2.jpg" alt="Appetizer 2">
+                <h2>Buffalo Chicken Wings</h2>
+                <p>Spicy and tangy chicken wings served with celery sticks and blue cheese dressing.</p>
+                <button onclick="openCustomizeMenu('Buffalo Chicken Wings')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Mozzarella Sticks" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$8.99">
+                <img src="/images/appetizer3.jpg" alt="Appetizer 3">
+                <h2>Mozzarella Sticks</h2>
+                <p>Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight.</p>
+                <button onclick="openCustomizeMenu('Mozzarella Sticks')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Spinach Artichoke Dip" data-description="Creamy blend of spinach, artichokes, and cheese served with warm tortilla chips." data-price="$10.99">
+                <img src="/images/appetizer4.jpg" alt="Appetizer 4">
+                <h2>Spinach Artichoke Dip</h2>
+                <p>Creamy blend of spinach, artichokes, and cheese served with warm tortilla chips.</p>
+                <button onclick="openCustomizeMenu('Spinach Artichoke Dip')">Customize</button>
+            </div>
         </div>
-        <div class="social-media">
-            <!-- Social media icons and links go here -->
+
+        <div class="food-panel" id="breakfast">
+            <!-- Breakfast -->
+            <div class="food-item" data-name="Game Day Breakfast Burrito" data-description="Scrambled eggs, sausage, cheese, and salsa wrapped in a hearty tortilla." data-price="$7.99">
+                <img src="/images/breakfast1.jpg" alt="Breakfast 1">
+                <h2>Game Day Breakfast Burrito</h2>
+                <p>Scrambled eggs, sausage, cheese, and salsa wrapped in a hearty tortilla.</p>
+                <button onclick="openCustomizeMenu('Game Day Breakfast Burrito')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Avocado Toast Deluxe" data-description="Sliced avocado, poached eggs, and cherry tomatoes on toasted multigrain bread." data-price="$9.99">
+                <img src="/images/breakfast2.jpg" alt="Breakfast 2">
+                <h2>Avocado Toast Deluxe</h2>
+                <p>Sliced avocado, poached eggs, and cherry tomatoes on toasted multigrain bread.</p>
+                <button onclick="openCustomizeMenu('Avocado Toast Deluxe')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Pancake Stack" data-description="Fluffy pancakes served with maple syrup, whipped cream, and fresh berries." data-price="$6.99">
+                <img src="/images/breakfast3.jpg" alt="Breakfast 3">
+                <h2>Pancake Stack</h2>
+                <p>Fluffy pancakes served with maple syrup, whipped cream, and fresh berries.</p>
+                <button onclick="openCustomizeMenu('Pancake Stack')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Classic Breakfast Platter" data-description="Bacon, eggs any style, hash browns, and toast—a timeless breakfast combination." data-price="$10.99">
+                <img src="/images/breakfast4.jpg" alt="Breakfast 4">
+                <h2>Classic Breakfast Platter</h2>
+                <p>Bacon, eggs any style, hash browns, and toast—a timeless breakfast combination.</p>
+                <button onclick="openCustomizeMenu('Classic Breakfast Platter')">Customize</button>
+            </div>
         </div>
-    </footer>
+
+        <div class="food-panel" id="lunch">
+            <!-- Lunch -->
+            <div class="food-item" data-name="BBQ Pulled Pork Sandwich" data-description="Slow-cooked pulled pork smothered in barbecue sauce on a soft bun." data-price="$12.99">
+                <img src="/images/lunch1.jpg" alt="Lunch 1">
+                <h2>BBQ Pulled Pork Sandwich</h2>
+                <p>Slow-cooked pulled pork smothered in barbecue sauce on a soft bun.</p>
+                <button onclick="openCustomizeMenu('BBQ Pulled Pork Sandwich')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Caprese Salad Wrap" data-description="Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze in a wrap." data-price="$9.99">
+                <img src="/images/lunch2.jpg" alt="Lunch 2">
+                <h2>Caprese Salad Wrap</h2>
+                <p>Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze in a wrap.</p>
+                <button onclick="openCustomizeMenu('Caprese Salad Wrap')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Southwest Chicken Salad" data-description="Grilled chicken, black beans, corn, and avocado on a bed of greens." data-price="$11.99">
+                <img src="/images/lunch3.jpg" alt="Lunch 3">
+                <h2>Southwest Chicken Salad</h2>
+                <p>Grilled chicken, black beans, corn, and avocado on a bed of greens.</p>
+                <button onclick="openCustomizeMenu('Southwest Chicken Salad')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Vegetarian Quesadilla" data-description="Flour tortilla filled with melted cheese, veggies, and served with salsa." data-price="$8.99">
+                <img src="/images/lunch4.jpg" alt="Lunch 4">
+                <h2>Vegetarian Quesadilla</h2>
+                <p>Flour tortilla filled with melted cheese, veggies, and served with salsa.</p>
+                <button onclick="openCustomizeMenu('Vegetarian Quesadilla')">Customize</button>
+            </div>
+        </div>
+
+        <div class="food-panel" id="dinner">
+            <!-- Dinner -->
+            <div class="food-item" data-name="Steakhouse Burger" data-description="Juicy beef patty, cheddar cheese, lettuce, tomato, and steak sauce." data-price="$13.99">
+                <img src="/images/dinner1.jpg" alt="Dinner 1">
+                <h2>Steakhouse Burger</h2>
+                <p>Juicy beef patty, cheddar cheese, lettuce, tomato, and steak sauce.</p>
+                <button onclick="openCustomizeMenu('Steakhouse Burger')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Grilled Salmon with Lemon Herb Butter" data-description="Lightly seasoned salmon fillet topped with a zesty lemon herb butter." data-price="$16.99">
+                <img src="/images/dinner2.jpg" alt="Dinner 2">
+                <h2>Grilled Salmon with Lemon Herb Butter</h2>
+                <p>Lightly seasoned salmon fillet topped with a zesty lemon herb butter.</p>
+                <button onclick="openCustomizeMenu('Grilled Salmon with Lemon Herb Butter')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Chicken Alfredo Pasta" data-description="Creamy Alfredo sauce with grilled chicken served over fettuccine pasta." data-price="$14.99">
+                <img src="/images/dinner3.jpg" alt="Dinner 3">
+                <h2>Chicken Alfredo Pasta</h2>
+                <p>Creamy Alfredo sauce with grilled chicken served over fettuccine pasta.</p>
+                <button onclick="openCustomizeMenu('Chicken Alfredo Pasta')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Vegetable Stir-Fry" data-description="A colorful medley of stir-fried vegetables in a savory soy-ginger sauce." data-price="$12.99">
+                <img src="/images/dinner4.jpg" alt="Dinner 4">
+                <h2>Vegetable Stir-Fry</h2>
+                <p>A colorful medley of stir-fried vegetables in a savory soy-ginger sauce.</p>
+                <button onclick="openCustomizeMenu('Vegetable Stir-Fry')">Customize</button>
+            </div>
+        </div>
+
+        <div class="food-panel" id="dessert">
+            <!-- Dessert -->
+            <div class="food-item" data-name="Triple Chocolate Brownie Sundae" data-description="Decadent chocolate brownie topped with ice cream, chocolate sauce, and nuts." data-price="$8.99">
+                <img src="/images/dessert1.jpg" alt="Dessert 1">
+                <h2>Triple Chocolate Brownie Sundae</h2>
+                <p>Decadent chocolate brownie topped with ice cream, chocolate sauce, and nuts.</p>
+                <button onclick="openCustomizeMenu('Triple Chocolate Brownie Sundae')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Apple Cinnamon Crisp" data-description="Warm apple and cinnamon filling topped with a crunchy oatmeal crust." data-price="$7.99">
+                <img src="/images/dessert2.jpg" alt="Dessert 2">
+                <h2>Apple Cinnamon Crisp</h2>
+                <p>Warm apple and cinnamon filling topped with a crunchy oatmeal crust.</p>
+                <button onclick="openCustomizeMenu('Apple Cinnamon Crisp')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Mango Tango Cheesecake" data-description="Creamy mango-infused cheesecake with a graham cracker crust." data-price="$9.99">
+                <img src="/images/dessert3.jpg" alt="Dessert 3">
+                <h2>Mango Tango Cheesecake</h2>
+                <p>Creamy mango-infused cheesecake with a graham cracker crust.</p>
+                <button onclick="openCustomizeMenu('Mango Tango Cheesecake')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Banana Foster Crepes" data-description="Thin crepes filled with caramelized bananas and topped with vanilla ice cream." data-price="$10.99">
+                <img src="/images/dessert4.jpg" alt="Dessert 4">
+                <h2>Banana Foster Crepes</h2>
+                <p>Thin crepes filled with caramelized bananas and topped with vanilla ice cream.</p>
+                <button onclick="openCustomizeMenu('Banana Foster Crepes')">Customize</button>
+            </div>
+        </div>
+
+        <div class="food-panel" id="sides">
+            <!-- Sides -->
+            <div class="food-item" data-name="Garlic Parmesan Fries" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$4.99">
+                <img src="/images/sides1.jpg" alt="Sides 1">
+                <h2>Garlic Parmesan Fries</h2>
+                <p>Crispy fries tossed in garlic, parmesan, and fresh herbs.</p>
+                <button onclick="openCustomizeMenu('Garlic Parmesan Fries')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Onion Rings" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$6.99">
+                <img src="/images/sides2.jpg" alt="Sides 2">
+                <h2>Onion Rings</h2>
+                <p>Beer-battered and golden-fried onion rings served with a zesty dipping sauce.</p>
+                <button onclick="openCustomizeMenu('Onion Rings')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Loaded Baked Potato" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$5.99">
+                <img src="/images/sides3.jpg" alt="Sides 3">
+                <h2>Loaded Baked Potato</h2>
+                <p>Baked potato topped with cheese, bacon, sour cream, and chives.</p>
+                <button onclick="openCustomizeMenu('Loaded Baked Potato')">Customize</button>
+            </div>
+
+            <div class="food-item" data-name="Grilled Vegetables" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$7.99">
+                <img src="/images/sides4.jpg" alt="Sides 4">
+                <h2>Grilled Vegetables</h2>
+                <p>Seasonal vegetables grilled to perfection with a hint of smoky flavor.</p>
+                <button onclick="openCustomizeMenu('Grilled Vegetables')">Customize</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customize Menu Section-->
+    <div class="customize-menu">
+        <div class="customize-content">
+            <div class="customize-image">
+                <img src="" alt="Food Image" id="customizeFoodImage">
+            </div>
+            <div class="customize-details">
+                <h2 id="customizeFoodName"></h2>
+                <p id="customizeFoodDescription"></p>
+                
+                <!-- List of sides -->
+                <ul class="customize-sides">
+                    <li><input type="radio" name="side" id="side1" value="Side 1"><label for="side1">Garlic Parmesan Fries</label></li>
+                    <li><input type="radio" name="side" id="side2" value="Side 2"><label for="side2">Onion Rings</label></li>
+                    <li><input type="radio" name="side" id="side3" value="Side 3"><label for="side3">Loaded Baked Potato</label></li>
+                    <li><input type="radio" name="side" id="side4" value="Side 4"><label for="side4">Grilled Vegetables</label></li>
+                </ul>
+
+                <p id="customizeFoodPrice"></p>
+                <button onclick="addToCart()">Add to Cart</button>
+                <button onclick="closeCustomizeMenu()">Close</button>
+            </div>
+        </div>
+    </div>
+    <!-- Events Section -->
+    <h1 style="text-align: center;">Events</h1>
+    <section class="events">
+        <h1 style="text-align: center;">Upcoming Events</h1>
+
+        <!-- Slideshow Container -->
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="/sample1.png" alt="Slide 1">
+            </div>
+            <div class="mySlides fade">
+                <img src="/sample2.png" alt="Slide 2">
+            </div>
+            <div class="mySlides fade">
+                <img src="/sample3.png" alt="Slide 3">
+            </div>
+        
+            <!-- Add navigation buttons if needed -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+            <!-- Navigation Arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- Dot Navigation -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <h1 style="text-align: center;">Reservation</h1>
+        <!-- Find a Reservation Form -->
+        <div class="reservation-form">
+            <h1 style="text-align: center;">Find a Reservation</h1>
+            <form id="reservationForm" onsubmit="findTable(); return false;">
+                <!-- Date Input -->
+                <label for="reservationDate">Date:</label>
+                <input type="date" id="reservationDate" value="2023-12-29">
+        
+                <!-- Time Input -->
+                <label for="reservationTime">Time:</label>
+                <input type="time" id="reservationTime" value="19:00">
+        
+                <!-- People Dropdown -->
+                <label for="peopleCount">People:</label>
+                <select id="peopleCount">
+                    <option value="1">1 person</option>
+                    <option value="2">2 people</option>
+                    <option value="3">3 people</option>
+                    <!-- Add more options as needed -->
+                </select>
+        
+                <!-- Submit Button -->
+                <button type="submit">Find a Table</button>
+            </form>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-item">
+                    <h3>Address</h3>
+                    <p>Your Restaurant Address</p>
+                </div>
+                <div class="footer-item">
+                    <h3>Email</h3>
+                    <p>info@yourrestaurant.com</p>
+                </div>
+                <div class="footer-item">
+                    <h3>Phone</h3>
+                    <p>(123) 456-7890</p>
+                </div>
+                <div class="footer-item">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <!-- Add your social media icons and links here -->
+                        <a href="#" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    <script src="/src/script.js"></script>
 </body>
-<script src="/src/script.js"></script>
 </html>

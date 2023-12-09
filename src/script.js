@@ -1,150 +1,135 @@
-let shop = document.getElementById("shop");
 
-let shopItemsData = [{
-    id: "Eggs",
-    name: "Eggs Benedict",
-    price: 10.99,
-    desc: "Poached eggs on an English muffin with hollandaise sauce.",
-    img: "/imgMenu/eggsBenedict.jpg"
-},
-{
-    id: "Pancakes",
-    name: "Pancakes",
-    price: 8.99,
-    desc: "Fluffy pancakes with maple syrup and butter.",
-    img: "/imgMenu/pancakes.jpg"
-},
-{
-    id: "Omelette",
-    name: "Omelette",
-    price: 9.99,
-    desc: "Customizable omelette with your choice of ingredients.",
-    img: "/imgMenu/omelette.jpg"
-},
-{
-    id: "Salad",
-    name: "Grilled Chicken Salad",
-    price: 12.99,
-    desc: "Fresh greens with grilled chicken and balsamic vinaigrette.",
-    img: "/imgMenu/salad.jpg"
-},
-{
-    id: "Burger",
-    name: "Classic Burger",
-    price: 11.99,
-    desc: "Beef patty with lettuce, tomato, and your choice of toppings.",
-    img: "/imgMenu/burger.jpg"
-},
-{
-    id: "Wrap",
-    name: "Vegetarian Wrap",
-    price: 10.99,
-    desc: "Roasted veggies, hummus, and feta in a spinach wrap.",
-    img: "/imgMenu/veggie.jpg"
-},
-{
-    id: "Mignon",
-    name: "Filet Mignon",
-    price: 24.99,
-    desc: "Tender filet mignon with garlic mashed potatoes.",
-    img: "/imgMenu/mignon.jpg"
-},
-{
-    id: "Salmon",
-    name: "Salmon with Lemon Butter",
-    price: 20.99,
-    desc: "Grilled salmon with a tangy lemon butter sauce.",
-    img: "/imgMenu/salmon.jpg"
-},
-{
-    id: "Risotto",
-    name: "Vegetable Risotto",
-    price: 16.99,
-    desc: "Creamy risotto with a medley of seasonal vegetables.",
-    img: "/imgMenu/risotto.jpg"
-},
-{
-    id: "Cake",
-    name: "Chocolate Lava Cake",
-    price: 7.99,
-    desc: "Warm chocolate cake with a molten center.",
-    img: "/imgMenu/cake.jpg"
-},
-{
-    id: "Cheesecake",
-    name: "New York Cheesecake",
-    price: 6.99,
-    desc: "Creamy cheesecake with a graham cracker crust.",
-    img: "/imgMenu/cheesecake.jpg"
-},
-{
-    id: "Pie",
-    name: "Apple Pie",
-    price: 5.99,
-    desc: "Homemade apple pie with a flaky crust.",
-    img: "/imgMenu/pie.jpg"
-}]
+function showCategory(category) {
+    // Hide all food panels
+    var foodPanels = document.querySelectorAll('.food-panel');
+    foodPanels.forEach(function(panel) {
+        panel.classList.remove('active');
+    });
 
-let basket = [];
-
-let generateShop =()=>{
-    return (shop.innerHTML = shopItemsData
-        .map((x)=>{
-            let {id, name, price, desc, img} =x
-        return `
-        <div class="item">
-        <img width="200" src="${img}" alt="">
-        <div class="details">
-            <h3>${name}</h3>
-            <p>${desc}</p>
-            <div class="price-quantity">
-                <h2>$${price}</h2>
-                <div class="buttons">
-                    <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
-                    <div id=${id} class="quantity">0</div>
-                    <i onclick="increment(${id})" class="bi bi-plus-lg"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-        `
-    }).join(""));
+    // Show the selected category
+    var selectedPanel = document.getElementById(category);
+    if (selectedPanel) {
+        selectedPanel.classList.add('active');
+    }
 }
 
-generateShop()
+//Parallax Effect
 
-let increment = (id) => {
-    let selectedItem = id
-    let search = basket.find((x) => x.id === selectedItem.id)
+document.addEventListener('DOMContentLoaded', function () {
+    var parallaxSection = document.querySelector('.parallax');
 
-    if(search === undefined){
-        basket.push({
-            id: selectedItem.id,
-            item: 1,
-        })
-    }
-    else{
-        search.item += 1;
-    }
+    // Initial adjustment for smoother start
+    parallaxSection.style.backgroundPositionY = -window.scrollY * 0.15 + 'px';
 
-    localStorage.setItem("data", basket);
+    window.addEventListener('scroll', function () {
+        var scrollPosition = window.scrollY;
+        parallaxSection.style.backgroundPositionY = -scrollPosition * 0.15 + 'px';
+    });
+});
+
+// Hide all food panels except the default one (e.g., 'appetizers') on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            var defaultCategory = 'appetizers';
+            showCategory(defaultCategory);
+        });
+
+        function openCustomizeMenu(foodName) {
+            // Existing code to show/hide panels
+            // ...
+        
+            // Additional code to populate the customization menu
+            var foodItem = document.querySelector('.food-panel.active .food-item[data-name="' + foodName + '"]');
+        
+            var foodDetails = {
+                name: foodName,
+                description: foodItem.getAttribute('data-description'),
+                price: foodItem.getAttribute('data-price')
+            };
+        
+            document.getElementById('customizeFoodImage').src = foodDetails.image; // Assuming you have a way to get the image path
+            document.getElementById('customizeFoodName').innerText = foodDetails.name;
+            document.getElementById('customizeFoodDescription').innerText = foodDetails.description;
+            document.getElementById('customizeFoodPrice').innerText = 'Price: ' + foodDetails.price;
+        
+            // Show the customize menu
+            document.querySelector('.customize-menu').style.display = 'block';
+        }
+
+        function closeCustomizeMenu() {
+            // Hide the customize menu
+            document.querySelector('.customize-menu').style.display = 'none';
+        }
+
+        function addToCart() {
+            // Additional code to handle adding the item to the cart
+            // ...
+            
+            // Close the customize menu after adding to the cart
+            closeCustomizeMenu();
+        }
+
+        function getFoodDetails(foodName) {
+            // Add your logic to fetch food details based on the foodName
+            // This could be from an array, an API, or any other data source
+            // Return an object with image, name, description, and price properties
+            // For example:
+            return {
+                image: '/images/' + foodName.toLowerCase().replace(/\s/g, '') + '.jpg',
+                name: foodName,
+                description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                price: '$10.99'
+            };
+        }
+
+        function findTable() {
+            // Get the selected values
+            var date = document.getElementById('reservationDate').value;
+            var time = document.getElementById('reservationTime').value;
+            var people = document.getElementById('peopleCount').value;
     
-    update(selectedItem.id);
-};
-let decrement = (id) => {
-    let selectedItem = id
-    let search = basket.find((x) => x.id === selectedItem.id)
+            // Add your logic to handle the reservation search
+            // You can use the date, time, and people variables in your backend logic or API call
+    
+            // For now, let's log the selected values to the console
+            console.log('Date:', date);
+            console.log('Time:', time);
+            console.log('People:', people);
+    
+            // You can add further logic here, such as displaying a confirmation message or redirecting to a reservation page
+        }
+        var slideIndex = 1;
 
-    if(search.item === 0) return;
-    else{
-        search.item -= 1;
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
     }
 
-    
-    update(selectedItem.id);
-};
-let update = (id) => {
-    let search = basket.find((x) => x.id === id);
-    console.log(search.item);
-    document.getElementById(id).innerHTML = search.item;
-};
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    // Automatic slideshow
+    var slideInterval = setInterval(function () {
+        plusSlides(1);
+    }, 5000); // Change slide every 5 seconds
