@@ -18,7 +18,7 @@
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="/Pages/events.html">Events</a></li>
                 <li><a href="/Pages/reservation.html">Reservation</a></li>
-                <li><a href="/Pages/cart.html">Cart</a></li>
+                <li><a href="javascript:void(0);" onclick="openCart()" id="cart">Cart</span></a></li>
             </ul>
         </nav>
     </header>
@@ -54,28 +54,32 @@
                 <img src="/images/appetizer1.jpg" alt="Appetizer 1">
                 <h2>Loaded Nachos</h2>
                 <p>Crispy tortilla chips topped with melted cheese, guacamole, and salsa.</p>
-                <button onclick="openCustomizeMenu('Loaded Nachos')">Customize</button>
+                <h2>$9.99</h2>
+                <button onclick="addsToCart('Loaded Nachos')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Buffalo Chicken Wings" data-description="Spicy and tangy chicken wings served with celery sticks and blue cheese dressing." data-price="$11.99">
                 <img src="/images/appetizer2.jpg" alt="Appetizer 2">
                 <h2>Buffalo Chicken Wings</h2>
                 <p>Spicy and tangy chicken wings served with celery sticks and blue cheese dressing.</p>
-                <button onclick="openCustomizeMenu('Buffalo Chicken Wings')">Customize</button>
+                <h2>$11.99</h2>
+                <button onclick="addsToCart('Buffalo Chicken Wings')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Mozzarella Sticks" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$8.99">
                 <img src="/images/appetizer3.jpg" alt="Appetizer 3">
                 <h2>Mozzarella Sticks</h2>
                 <p>Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight.</p>
-                <button onclick="openCustomizeMenu('Mozzarella Sticks')">Customize</button>
+                <h2>$8.99</h2>
+                <button onclick="addsToCart('Mozzarella Sticks')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Spinach Artichoke Dip" data-description="Creamy blend of spinach, artichokes, and cheese served with warm tortilla chips." data-price="$10.99">
                 <img src="/images/appetizer4.jpg" alt="Appetizer 4">
                 <h2>Spinach Artichoke Dip</h2>
                 <p>Creamy blend of spinach, artichokes, and cheese served with warm tortilla chips.</p>
-                <button onclick="openCustomizeMenu('Spinach Artichoke Dip')">Customize</button>
+                <h2>$10.99</h2>
+                <button onclick="addsToCart('Spinach Artichoke Dip')">Add to Cart</button>
             </div>
         </div>
 
@@ -85,6 +89,7 @@
                 <img src="/images/breakfast1.jpg" alt="Breakfast 1">
                 <h2>Game Day Breakfast Burrito</h2>
                 <p>Scrambled eggs, sausage, cheese, and salsa wrapped in a hearty tortilla.</p>
+                <h2>$7.99</h2>
                 <button onclick="openCustomizeMenu('Game Day Breakfast Burrito')">Customize</button>
             </div>
 
@@ -92,6 +97,7 @@
                 <img src="/images/breakfast2.jpg" alt="Breakfast 2">
                 <h2>Avocado Toast Deluxe</h2>
                 <p>Sliced avocado, poached eggs, and cherry tomatoes on toasted multigrain bread.</p>
+                <h2>$9.99</h2>
                 <button onclick="openCustomizeMenu('Avocado Toast Deluxe')">Customize</button>
             </div>
 
@@ -99,6 +105,7 @@
                 <img src="/images/breakfast3.jpg" alt="Breakfast 3">
                 <h2>Pancake Stack</h2>
                 <p>Fluffy pancakes served with maple syrup, whipped cream, and fresh berries.</p>
+                <h2>$6.99</h2>
                 <button onclick="openCustomizeMenu('Pancake Stack')">Customize</button>
             </div>
 
@@ -106,6 +113,7 @@
                 <img src="/images/breakfast4.jpg" alt="Breakfast 4">
                 <h2>Classic Breakfast Platter</h2>
                 <p>Bacon, eggs any style, hash browns, and toast—a timeless breakfast combination.</p>
+                <h2>$10.99</h2>
                 <button onclick="openCustomizeMenu('Classic Breakfast Platter')">Customize</button>
             </div>
         </div>
@@ -116,6 +124,7 @@
                 <img src="/images/lunch1.jpg" alt="Lunch 1">
                 <h2>BBQ Pulled Pork Sandwich</h2>
                 <p>Slow-cooked pulled pork smothered in barbecue sauce on a soft bun.</p>
+                <h2>$12.99</h2>
                 <button onclick="openCustomizeMenu('BBQ Pulled Pork Sandwich')">Customize</button>
             </div>
 
@@ -123,6 +132,7 @@
                 <img src="/images/lunch2.jpg" alt="Lunch 2">
                 <h2>Caprese Salad Wrap</h2>
                 <p>Fresh mozzarella, tomatoes, and basil drizzled with balsamic glaze in a wrap.</p>
+                <h2>$9.99</h2>
                 <button onclick="openCustomizeMenu('Caprese Salad Wrap')">Customize</button>
             </div>
 
@@ -130,6 +140,7 @@
                 <img src="/images/lunch3.jpg" alt="Lunch 3">
                 <h2>Southwest Chicken Salad</h2>
                 <p>Grilled chicken, black beans, corn, and avocado on a bed of greens.</p>
+                <h2>$11.99</h2>
                 <button onclick="openCustomizeMenu('Southwest Chicken Salad')">Customize</button>
             </div>
 
@@ -137,6 +148,7 @@
                 <img src="/images/lunch4.jpg" alt="Lunch 4">
                 <h2>Vegetarian Quesadilla</h2>
                 <p>Flour tortilla filled with melted cheese, veggies, and served with salsa.</p>
+                <h2>$8.99</h2>
                 <button onclick="openCustomizeMenu('Vegetarian Quesadilla')">Customize</button>
             </div>
         </div>
@@ -147,6 +159,7 @@
                 <img src="/images/dinner1.jpg" alt="Dinner 1">
                 <h2>Steakhouse Burger</h2>
                 <p>Juicy beef patty, cheddar cheese, lettuce, tomato, and steak sauce.</p>
+                <h2>$13.99</h2>
                 <button onclick="openCustomizeMenu('Steakhouse Burger')">Customize</button>
             </div>
 
@@ -154,6 +167,7 @@
                 <img src="/images/dinner2.jpg" alt="Dinner 2">
                 <h2>Grilled Salmon with Lemon Herb Butter</h2>
                 <p>Lightly seasoned salmon fillet topped with a zesty lemon herb butter.</p>
+                <h2>$16.99</h2>
                 <button onclick="openCustomizeMenu('Grilled Salmon with Lemon Herb Butter')">Customize</button>
             </div>
 
@@ -161,6 +175,7 @@
                 <img src="/images/dinner3.jpg" alt="Dinner 3">
                 <h2>Chicken Alfredo Pasta</h2>
                 <p>Creamy Alfredo sauce with grilled chicken served over fettuccine pasta.</p>
+                <h2>$14.99</h2>
                 <button onclick="openCustomizeMenu('Chicken Alfredo Pasta')">Customize</button>
             </div>
 
@@ -168,6 +183,7 @@
                 <img src="/images/dinner4.jpg" alt="Dinner 4">
                 <h2>Vegetable Stir-Fry</h2>
                 <p>A colorful medley of stir-fried vegetables in a savory soy-ginger sauce.</p>
+                <h2>$12.99</h2>
                 <button onclick="openCustomizeMenu('Vegetable Stir-Fry')">Customize</button>
             </div>
         </div>
@@ -178,28 +194,32 @@
                 <img src="/images/dessert1.jpg" alt="Dessert 1">
                 <h2>Triple Chocolate Brownie Sundae</h2>
                 <p>Decadent chocolate brownie topped with ice cream, chocolate sauce, and nuts.</p>
-                <button onclick="openCustomizeMenu('Triple Chocolate Brownie Sundae')">Customize</button>
+                <h2>$8.99</h2>
+                <button onclick="addsToCart('Triple Chocolate Brownie Sundae')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Apple Cinnamon Crisp" data-description="Warm apple and cinnamon filling topped with a crunchy oatmeal crust." data-price="$7.99">
                 <img src="/images/dessert2.jpg" alt="Dessert 2">
                 <h2>Apple Cinnamon Crisp</h2>
                 <p>Warm apple and cinnamon filling topped with a crunchy oatmeal crust.</p>
-                <button onclick="openCustomizeMenu('Apple Cinnamon Crisp')">Customize</button>
+                <h2>$7.99</h2>
+                <button onclick="addsToCart('Apple Cinnamon Crisp')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Mango Tango Cheesecake" data-description="Creamy mango-infused cheesecake with a graham cracker crust." data-price="$9.99">
                 <img src="/images/dessert3.jpg" alt="Dessert 3">
                 <h2>Mango Tango Cheesecake</h2>
                 <p>Creamy mango-infused cheesecake with a graham cracker crust.</p>
-                <button onclick="openCustomizeMenu('Mango Tango Cheesecake')">Customize</button>
+                <h2>$9.99</h2>
+                <button onclick="addsToCart('Mango Tango Cheesecake')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Banana Foster Crepes" data-description="Thin crepes filled with caramelized bananas and topped with vanilla ice cream." data-price="$10.99">
                 <img src="/images/dessert4.jpg" alt="Dessert 4">
                 <h2>Banana Foster Crepes</h2>
                 <p>Thin crepes filled with caramelized bananas and topped with vanilla ice cream.</p>
-                <button onclick="openCustomizeMenu('Banana Foster Crepes')">Customize</button>
+                <h2>$10.99</h2>
+                <button onclick="addsToCart('Banana Foster Crepes')">Add to Cart</button>
             </div>
         </div>
 
@@ -209,28 +229,32 @@
                 <img src="/images/sides1.jpg" alt="Sides 1">
                 <h2>Garlic Parmesan Fries</h2>
                 <p>Crispy fries tossed in garlic, parmesan, and fresh herbs.</p>
-                <button onclick="openCustomizeMenu('Garlic Parmesan Fries')">Customize</button>
+                <h2>$4.99</h2>
+                <button onclick="addsToCart('Garlic Parmesan Fries')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Onion Rings" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$6.99">
                 <img src="/images/sides2.jpg" alt="Sides 2">
                 <h2>Onion Rings</h2>
                 <p>Beer-battered and golden-fried onion rings served with a zesty dipping sauce.</p>
-                <button onclick="openCustomizeMenu('Onion Rings')">Customize</button>
+                <h2>$6.99</h2>
+                <button onclick="addsToCart('Onion Rings')">Add to Cart</button>
             </div>
 
             <div class="food-item" data-name="Loaded Baked Potato" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$5.99">
                 <img src="/images/sides3.jpg" alt="Sides 3">
                 <h2>Loaded Baked Potato</h2>
                 <p>Baked potato topped with cheese, bacon, sour cream, and chives.</p>
-                <button onclick="openCustomizeMenu('Loaded Baked Potato')">Customize</button>
+                <button onclick="addsToCart('Loaded Baked Potato')">Add to Cart</button>
+                <h2>$5.99</h2>
             </div>
 
             <div class="food-item" data-name="Grilled Vegetables" data-description="Golden-fried mozzarella sticks with marinara sauce for a gooey, cheesy delight." data-price="$7.99">
                 <img src="/images/sides4.jpg" alt="Sides 4">
                 <h2>Grilled Vegetables</h2>
                 <p>Seasonal vegetables grilled to perfection with a hint of smoky flavor.</p>
-                <button onclick="openCustomizeMenu('Grilled Vegetables')">Customize</button>
+                <h2>$7.99</h2>
+                <button onclick="addsToCart('Grilled Vegetables')">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -247,10 +271,10 @@
                 
                 <!-- List of sides -->
                 <ul class="customize-sides">
-                    <li><input type="radio" name="side" id="side1" value="Side 1"><label for="side1">Garlic Parmesan Fries</label></li>
-                    <li><input type="radio" name="side" id="side2" value="Side 2"><label for="side2">Onion Rings</label></li>
-                    <li><input type="radio" name="side" id="side3" value="Side 3"><label for="side3">Loaded Baked Potato</label></li>
-                    <li><input type="radio" name="side" id="side4" value="Side 4"><label for="side4">Grilled Vegetables</label></li>
+                    <li><input type="radio" name="side" id="side1" value="Garlic Parmesan Fries"><label for="side1">Garlic Parmesan Fries</label></li>
+                    <li><input type="radio" name="side" id="side2" value="Onion Rings"><label for="side2">Onion Rings</label></li>
+                    <li><input type="radio" name="side" id="side3" value="Loaded Baked Potato"><label for="side3">Loaded Baked Potato</label></li>
+                    <li><input type="radio" name="side" id="side4" value="Grilled Vegetables"><label for="side4">Grilled Vegetables</label></li>
                 </ul>
 
                 <p id="customizeFoodPrice"></p>
@@ -312,6 +336,13 @@
                     <option value="1">1 person</option>
                     <option value="2">2 people</option>
                     <option value="3">3 people</option>
+                    <option value="3">4 people</option>
+                    <option value="3">5 people</option>
+                    <option value="3">6 people</option>
+                    <option value="3">7 people</option>
+                    <option value="3">8 people</option>
+                    <option value="3">9 people</option>
+                    <option value="3">10 people</option>
                     <!-- Add more options as needed -->
                 </select>
         
@@ -319,6 +350,29 @@
                 <button type="submit">Find a Table</button>
             </form>
         </div>
+        <!-- Cart Overlay -->
+    <div class="cart-overlay">
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button onclick="closeCart()">Close</button>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <div class="total">
+                    <span>Total (with tax):</span>
+                    <span id="cartTotal">$0.00</span>
+                </div>
+                <button onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
         <footer>
             <div class="footer-container">
                 <div class="footer-item">

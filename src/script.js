@@ -133,3 +133,107 @@ document.addEventListener('DOMContentLoaded', function () {
     var slideInterval = setInterval(function () {
         plusSlides(1);
     }, 5000); // Change slide every 5 seconds
+
+// Cart Data (initialize as an empty array)
+var cartItems = [];
+
+function openCart() {
+    document.querySelector('.cart-overlay').style.display = 'flex';
+    updateCart();
+}
+
+function closeCart() {
+    document.querySelector('.cart-overlay').style.display = 'none';
+}
+
+function addToCart() {
+    // Get the selected food item
+    var foodName = document.getElementById('customizeFoodName').innerText;
+    var foodPrice = document.getElementById('customizeFoodPrice').innerText;
+
+    // Extract the price value (remove "$" and convert to a float)
+    var priceValue = parseFloat(foodPrice.split('$')[1]);
+
+    // Get the selected side
+    var selectedSide = document.querySelector('input[name="side"]:checked');
+    var sideName = selectedSide ? selectedSide.value : 'No Side';
+    var sidePrice = 2.99; // Replace with the actual price of the side
+
+    // Create objects with item details for the food and side
+    var foodDetails = {
+        name: foodName,
+        price: priceValue
+    };
+
+    var sideDetails = {
+        name: sideName,
+        price: sidePrice
+    };
+
+    // Add the items to the cart
+    cartItems.push(foodDetails, sideDetails);
+
+    // Update the cart display
+    updateCart();
+
+    // Close the customize menu after adding to the cart
+    closeCustomizeMenu();
+}
+
+function addsToCart(foodName) {
+    // Extract the price value (assuming price is in the format "$X.XX")
+    var foodPrice = document.querySelector(`[data-name='${foodName}']`).getAttribute('data-price');
+    var priceValue = parseFloat(foodPrice.split('$')[1]);
+
+    // Create an object with item details for the food
+    var foodDetails = {
+        name: foodName,
+        price: priceValue
+    };
+
+    // Add the item to the cart
+    cartItems.push(foodDetails);
+
+    // Update the cart display
+    updateCart();
+    triggerCartAnimation();
+}
+
+function removeItem(index) {
+    cartItems.splice(index, 1);
+    updateCart();
+}
+
+function updateCart() {
+    var cartItemsContainer = document.querySelector('.cart-items');
+    cartItemsContainer.innerHTML = '';
+
+    var subtotal = 0;
+
+    cartItems.forEach(function (item, index) {
+        var cartItemElement = document.createElement('div');
+        cartItemElement.classList.add('cart-item');
+        cartItemElement.innerHTML = `
+            <div>${item.name}</div>
+            <div>$${item.price}</div>
+            <button onclick="removeItem(${index})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(cartItemElement);
+
+        subtotal += parseFloat(item.price);
+    });
+
+    var cartSubtotalElement = document.getElementById('cartSubtotal');
+    var cartTotalElement = document.getElementById('cartTotal');
+    var taxRate = 0.1; // 10% tax rate (adjust as needed)
+
+    var total = subtotal + subtotal * taxRate;
+
+    cartSubtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    cartTotalElement.textContent = `$${total.toFixed(2)}`;
+}
+
+function checkout() {
+    // Implement the checkout logic
+    alert('Checkout functionality will be implemented here.');
+}
