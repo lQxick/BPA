@@ -1,3 +1,28 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color */
+    border-radius: 6px; /* Rounded corners */
+    border: 3px solid #f1f1f1; /* Border around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Thumb color on hover */
+}
+
+/* Custom scrollbar for Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
 @font-face {
     font-family: 'Lora';
     src: url('fonts/Lora-Regular.ttf') format('truetype');
@@ -9,6 +34,21 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Lora', serif
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888; /* Thumb color */
+    border-radius: 6px; /* Rounded corners */
+    border: 3px solid #f1f1f1; /* Border around thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Thumb color on hover */
 }
 
 header {
@@ -117,6 +157,10 @@ nav a:hover::before {
 
 /* Menu Section */
 
+#menutitle {
+    padding-top: 50px;
+}
+
 .menu {
     display: flex;
     justify-content: space-around; /* Adjust as needed */
@@ -164,7 +208,7 @@ nav a:hover::before {
     display: none;
     flex: 1;
     flex-wrap: wrap;
-    overflow: scroll;
+    overflow-y: scroll;
     height: 500px;
 }
 
@@ -282,97 +326,57 @@ nav a:hover::before {
     background-color: #ddd;
 }
 
-/* Events Section */
+/* Events */
+#eventstitle {
+    padding-top: 50px;
+}
 
 .events {
-    text-align: center;
-    padding: 50px 0;
-}
-
-/* Slideshow */
-
-.slideshow-container {
-    max-width: 100%;
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-}
-
-.mySlides {
-    display: none;
+    overflow-y: scroll;
+    max-height: 500px;
     width: 100%;
-    height: 500px;
+    justify-content: center; /* Center-align the items horizontally */
+}
+
+.event-container {
+    width: 75%;
+    display: flex;
+    /* Center-align the container horizontally */
+    margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 50px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.171); /* Add a subtle shadow */
+    
+}
+
+.event-image {
+    flex: 1;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-/* Navigation Arrows */
-
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 2; /* Set a higher z-index value */
+.event-details {
+    flex: 2;
+    padding: 10px;
 }
 
-.prev {
-    left: 0;
+.event-details h2 {
+    margin-bottom: 10px;
 }
 
-.next {
-    right: 0;
-}
-
-.prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-/* Dot Navigation */
-
-.dot-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    cursor: pointer;
-}
-
-.active,
-.dot:hover {
-    background-color: #717171;
-}
-
-/* Slideshow Animation */
-
-@keyframes fade {
-    from {
-        opacity: .4;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 /* Reservation Form */
+
+#reservationtitle {
+    padding-top: 50px;
+}
+
 .reservation-form {
     text-align: center;
     padding: 20px;
@@ -420,7 +424,7 @@ button:hover {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 0; /* Increase padding for a better look */
 }
 
 .footer-container {
@@ -432,28 +436,49 @@ footer {
 .footer-item {
     flex: 1;
     margin: 0 20px;
+    max-width: 300px; /* Limit the maximum width of each item */
+    text-align: center; /* Center-align content */
 }
 
 .footer-item h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 24px; /* Increase font size for headings */
+    margin-bottom: 20px; /* Increase margin for headings */
 }
 
 .footer-item p {
     font-size: 16px;
+    line-height: 1.6; /* Improve line spacing for better readability */
 }
 
 .social-icons {
     display: flex;
+    justify-content: center; /* Center-align social icons */
+    margin-top: 20px; /* Add margin to separate social icons from contact information */
 }
 
 .social-icons a {
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 .social-icons img {
-    width: 30px; /* Adjust the size of your social media icons */
+    width: 30px;
     height: auto;
+    border-radius: 50%; /* Make social icons circular */
+    transition: transform 0.3s ease; /* Add a subtle hover effect */
+}
+
+.social-icons img:hover {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+}
+
+/* Add this style to change the link color to white */
+.footer-item a {
+    color: #fff; /* Set the link color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-item a:hover {
+    text-decoration: underline; /* Underline on hover */
 }
 
 /* Cart Overlay Styles */
@@ -501,4 +526,55 @@ footer {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+}
+
+/* Mobile Layout */
+@media screen and (max-width: 800px) {
+    /* ... (previous styles) */
+    body {
+        font-size: 14px;
+        overflow-x: hidden; /* Hide horizontal overflow */
+    }
+    /* Adjust Navigation Bar Image Size */
+    .logo img {
+        max-height: 60px; /* Adjust the maximum height of your logo for mobile */
+    }
+
+    /* Display only Cart Icon in Header */
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Align cart icon to the right */
+    }
+
+    nav li:not(:last-child) {
+        display: none; /* Hide all navigation items except the last one (cart) */
+    }
+
+    /* Adjust Parallax Image Margin */
+    .parallax {
+        margin-top: 70px;
+    }
+
+    /* Ensure only the active food panel is displayed */
+    .food-panel.active {
+        flex-direction:row; /* Change flex direction to stack items */
+    }
+
+    .food-panel.active .food-item {
+        width: 100%; /* Set food items to full width */
+    }
+
+    .food-panel.active .food-item img {
+        max-width: 100%; /* Make food item images responsive */
+    }
+
+    .food-panel {
+    width: 75%;
+    display: none;
+    flex: 1;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 500px;
+}
 }

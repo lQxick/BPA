@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/src/styles.css">
     <title>Game Day Grill | Sizzling Delights</title>
     <link rel="icon" type="/image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
@@ -15,10 +16,10 @@
         <!-- navigation bar -->
         <nav>
             <ul class="menu">
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#events">Events</a></li>
-                <li><a href="#resercation">Reservation</a></li>
-                <li><a href="javascript:void(0);" onclick="openCart()" id="cart">Cart</span></a></li>
+                <li><a href="#menutitle">Menu</a></li>
+                <li><a href="#eventstitle">Events</a></li>
+                <li><a href="#reservationtitle">Reservation</a></li>
+                <li><a href="javascript:void(0);" onclick="openCart()" id="cart"><i class="bi bi-cart"></i></span></a></li>
             </ul>
         </nav>
     </header>
@@ -26,13 +27,13 @@
     <!--Parallax Image-->
     <section class="parallax">
         <div class="overlay">
-            <h1>Welcome to Game Day Grill!</h1>
-            <p>Your Sub-Header Goes Here</p>
+            <h1>Sizzling Delights, Unforgettable Nights.</h1>
+            <p>Join us for an unforgettable dining experience!</p>
         </div>
     </section>
     
         <!-- Menu Section -->
-    <h1 style="text-align: center;">Menu</h1>
+    <h1 style="text-align: center;" id="menutitle">Menu</h1>
     <section class="menu" id="menu">
         <!-- Left Panel - Categories -->
         <div class="category-panel">
@@ -284,40 +285,37 @@
         </div>
     </div>
     <!-- Events Section -->
-    <h1 style="text-align: center;">Events</h1>
+    <h1 style="text-align: center;" id="eventstitle">Events</h1>
     <section class="events" id="events">
-        <h1 style="text-align: center;">Upcoming Events</h1>
-
-        <!-- Slideshow Container -->
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="/sample1.png" alt="Slide 1">
+        <div class="event-container">
+            <div class="event-image">
+                <img src="/path/to/your/image1.jpg" alt="Event 1">
             </div>
-            <div class="mySlides fade">
-                <img src="/sample2.png" alt="Slide 2">
+            <div class="event-details">
+                <h2>Football Fridays</h2>
+                <p>Dive into the excitement of football season every Friday with game-day specials, team-themed treats, and an electric atmosphere for fans of all ages.</p>
             </div>
-            <div class="mySlides fade">
-                <img src="/sample3.png" alt="Slide 3">
-            </div>
-        
-            <!-- Add navigation buttons if needed -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
-
-            <!-- Navigation Arrows -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="event-container">
+            <div class="event-image">
+                <img src="/path/to/your/image2.jpg" alt="Event 2">
+            </div>
+            <div class="event-details">
+                <h2>Hockey Havoc Night</h2>
+                <p>Lace-up your enthusiasm for hockey as we bring you themed delights, icy cool beverages, and a high-energy ambiance every game night.</p>
+            </div>
         </div>
-
-        <!-- Dot Navigation -->
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+        <div class="event-container">
+            <div class="event-image">
+                <img src="/path/to/your/image3.jpg" alt="Event 3">
+            </div>
+            <div class="event-details">
+                <h2>Basketball Bonanza Bash</h2>
+                <p>Slam dunk into the thrill of basketball action with our Friday night bash, featuring hoops-inspired dishes, buzzer-beater drink specials, and a hoopla of cheers.</p>
+            </div>
         </div>
     </section>
-    <h1 style="text-align: center;">Reservation</h1>
+    <h1 style="text-align: center;" id="reservationtitle">Reservation</h1>
         <!-- Find a Reservation Form -->
         <div class="reservation-form" id="reservation">
             <h1 style="text-align: center;">Find a Reservation</h1>
@@ -347,7 +345,7 @@
                 </select>
         
                 <!-- Submit Button -->
-                <button type="submit">Find a Table</button>
+                <button type="submit" onclick="reservation()">Find a Table</button>
             </form>
         </div>
         <!-- Cart Overlay -->
@@ -355,7 +353,7 @@
         <div class="cart-sidebar">
             <div class="cart-header">
                 <h2>Your Cart</h2>
-                <button onclick="closeCart()">Close</button>
+                <button onclick="closeCart()"><i class="bi bi-x-lg"></i></button>
             </div>
             <div class="cart-items">
                 <!-- Cart items will be dynamically added here -->
@@ -377,23 +375,25 @@
             <div class="footer-container">
                 <div class="footer-item">
                     <h3>Address</h3>
-                    <p>Your Restaurant Address</p>
+                    <p>123 Main Street
+                        Cityville, <br>State 54321 <br>
+                        United States</p>
                 </div>
                 <div class="footer-item">
                     <h3>Email</h3>
-                    <p>info@yourrestaurant.com</p>
+                    <a href="info.gamedaygrill@example.com">info.gamedaygrill@example.com</a>
                 </div>
                 <div class="footer-item">
                     <h3>Phone</h3>
-                    <p>(123) 456-7890</p>
+                    <p>+1 (555) 555-1234</p>
                 </div>
                 <div class="footer-item">
                     <h3>Follow Us</h3>
                     <div class="social-icons">
                         <!-- Add your social media icons and links here -->
-                        <a href="#" target="_blank"><img src="facebook-icon.png" alt="Facebook"></a>
-                        <a href="#" target="_blank"><img src="twitter-icon.png" alt="Twitter"></a>
-                        <a href="#" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+                        <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" target="_blank"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
             </div>

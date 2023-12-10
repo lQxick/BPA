@@ -216,7 +216,7 @@ function updateCart() {
         cartItemElement.innerHTML = `
             <div>${item.name}</div>
             <div>$${item.price}</div>
-            <button onclick="removeItem(${index})">Remove</button>
+            <button onclick="removeItem(${index})"><i class="bi bi-trash3-fill"></i></button>
         `;
         cartItemsContainer.appendChild(cartItemElement);
 
@@ -235,5 +235,21 @@ function updateCart() {
 
 function checkout() {
     // Implement the checkout logic
-    alert('Checkout functionality will be implemented here.');
+    alert('Checkout not functional.');
 }
+
+function reservation() {
+    // Implement the checkout logic
+    alert('Reservation not functional.');
+}
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
