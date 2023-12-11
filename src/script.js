@@ -157,7 +157,7 @@ function addToCart() {
     // Get the selected side
     var selectedSide = document.querySelector('input[name="side"]:checked');
     var sideName = selectedSide ? selectedSide.value : 'No Side';
-    var sidePrice = 2.99; // Replace with the actual price of the side
+    var sidePrice = 0; // Replace with the actual price of the side
 
     // Create objects with item details for the food and side
     var foodDetails = {
